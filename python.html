@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Portfolio: Restaurant Order Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #0779e4 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .showcase {
+            min-height: 400px;
+            background: #0779e4;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .showcase h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        .showcase p {
+            font-size: 20px;
+        }
+        .section {
+            padding: 30px 0;
+            border-bottom: 1px #ddd solid;
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            text-align: center;
+            color: #0779e4;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .section h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-left: 3px solid #0779e4;
+            padding-left: 10px;
+        }
+        .feature-grid, .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .feature-item, .gallery-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+        .feature-item ul, .proactive-enhancements ul {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-item ul li, .proactive-enhancements ul li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%230779e4" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .tech-stack ul {
+            list-style: none;
+            padding: 0;
+            column-count: 2;
+        }
+        .tech-stack ul li {
+            background: #e7f3fe;
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #0779e4;
+        }
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 15px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        .proactive-enhancements {
+            background: #e7f3fe;
+            padding: 25px;
+            border-radius: 5px;
+            border: 1px solid #c5dff8;
+        }
+         .proactive-enhancements h3 {
+            color: #054a8e;
+            border-left-color: #054a8e;
+         }
+
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+        }
+        
+        /* Accordion styles for features */
+        .accordion-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .accordion-header {
+            background-color: #0779e4;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .accordion-content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9f9f9;
+        }
+        .accordion-content img {
+             margin-bottom: 15px;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; /* Adjust as needed */
+            padding: 15px;
+        }
+        .accordion-header .icon::before {
+            content: '+';
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .accordion-item.active .accordion-header .icon::before {
+            content: '−';
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Project Portfolio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contributions">My Contributions</a></li>
+                    <li><a href="#tech">Tech Stack</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="container">
+            <h1>Restaurant Order Management System</h1>
+            <p>A comprehensive, full-featured online order management system designed for the tourism and catering industry.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="overview" class="section">
+            <h2>Project Overview</h2>
+            <p>This project is a <strong>full-featured online order management system</strong> specifically designed for the tourism and catering industry. It aims to address the pain points of traditional order processing methods, such as inefficiency, lack of transparency, and proneness to errors. Through digitalization and automation, it helps catering businesses achieve fine-grained management of the entire business process chain, from customer ordering, order review, menu management, and price control to bill generation, data export, and multilingual support. The system not only improves operational efficiency and reduces management costs but also enhances the company's market competitiveness by optimizing the customer experience.</p>
+            <h3>Core Value:</h3>
+            <ul>
+                <li><strong>Improved Operational Efficiency:</strong> Automates order processing, reducing manual intervention, significantly increasing processing speed and accuracy.</li>
+                <li><strong>Fine-grained Management:</strong> Provides comprehensive customer, menu, order, and financial data management, supporting multi-dimensional data analysis and export.</li>
+                <li><strong>Enhanced Customer Experience:</strong> Customers can submit orders online, track status, and request changes with convenient and transparent operations.</li>
+                <li><strong>Flexible Business Adaptation:</strong> Supports multi-role permission management, custom holiday service fees, future price settings, etc., to meet complex business scenarios.</li>
+                <li><strong>Data-Driven Decisions:</strong> Offers rich report export functions to assist businesses in data analysis and decision-making.</li>
+            </ul>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Core Features & Functionality</h2>
+            
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>User & Permission Management</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Robust multi-role system (Admin, Sub-Admin, Customer with Operator/Financier/Head roles) ensuring data security and operational compliance via Role-Based Access Control (RBAC). Features secure registration, login, password hashing, and recovery, alongside account activation/deactivation and soft delete capabilities.</p>
+                    <img src="img/01.png" alt="User Management Interface (Illustrative)" class="img-responsive">
+                    <small><em>Image: User and permission settings interface.</em></small>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>Customer Relationship Management (CRM Lite)</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Comprehensive management of tour company information, contact details, and account associations. Allows customers to submit profile change requests online, with admin approval workflows and full audit trails.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>Dynamic Menu & Pricing Strategy</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Supports menu categorization, item creation, editing, and soft deletion. Implements an intelligent pricing system including current/future pricing with automatic activation dates, differentiated pricing for adults, children (auto-calculated ratios), and staff (tour leaders, drivers, guides). Features flexible discount strategies like "1 free staff for every 9 customers" (configurable to include/exclude children).</p>
+                    <img src="img/02.png" alt="Menu and Pricing Configuration (Illustrative)" class="img-responsive">
+                     <small><em>Image: Menu items and pricing rules.</em></small>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>Core Order Management</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Full lifecycle order processing: creation, editing, multi-level approval workflows (Pending, Approved, Rejected). Provides real-time order status tracking, intelligent payment management (status, date, auto invoice number generation, due dates), and online order change/cancellation requests with admin approval and history logging.</p>
+                    <img src="img/03.png" alt="Order Management Dashboard (Illustrative)" class="img-responsive">
+                    <small><em>Image: Order list view with status indicators.</em></small>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>Powerful Data Export & Sharing</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Multi-dimensional report exports: quick daily/monthly standard reports, and advanced custom exports with field selection and criteria filtering (date range, customer, payment status). Utilizes `XlsxWriter` for dynamic Excel generation with auto-formatting and smart column width adjustment. Secure, expiring, token-based encrypted links for sharing exported files.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>Financial & Billing Management</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Automated generation of professional invoices from order data, with online viewing and download. Integrated email notifications (Flask-Mail) for invoices, payment reminders, and order status changes. Customizable public holiday service fees automatically calculated and applied to orders and invoices.</p>
+                    <img src="img/04.png" alt="Invoice Generation (Illustrative)" class="img-responsive">
+                    <small><em>Image: Example of a generated invoice or billing section.</em></small>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header"><h4>System Configuration & Internationalization</h4><span class="icon"></span></div>
+                <div class="accordion-content">
+                    <p>Flexible admin settings for company info, default staff meal prices, SMTP server, notifications. Built-in multilingual support (Chinese, English) with real-time UI switching and persistent user preferences (Flask-Babel). Comprehensive database management: manual/auto backup, upload/restore, and recycle bin functionality.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contributions" class="section">
+            <h2>My Key Contributions & Proactive Enhancements</h2>
+            <div class="proactive-enhancements">
+                <p>Beyond the core requirements, I took the initiative to develop several key features aimed at significantly improving system robustness, administrative efficiency, and overall user experience. These enhancements were implemented proactively to deliver a more polished and user-friendly product:</p>
+                <ul>
+                    <li>
+                        <strong>Comprehensive Backup and Restore System:</strong>
+                        Recognizing the critical importance of data integrity, I designed and implemented a robust backup and restore module. This includes:
+                        <ul>
+                            <li>Manual and automated (scheduled) database backups.</li>
+                            <li>Options for full (schema + data) or data-only backups.</li>
+                            <li>Secure storage and management of backup files.</li>
+                            <li>An intuitive interface for administrators to restore the system from a backup, and a recycle bin for deleted backups.</li>
+                            <li>This provides crucial data safety and disaster recovery capabilities.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Advanced Data Filtering & Search:</strong>
+                        To empower users with efficient data access, I developed sophisticated filtering and search functionalities across major modules like orders, customers, and menus. This allows users to quickly locate specific records based on multiple criteria (e.g., keywords, date ranges, status), dramatically improving a_string_var = """Hello World!"""
+a_second_one = '''How's life?'''
+another = "Yo!"
+作業効率.</li>
+                    <li>
+                        <strong>Efficient Batch Deletion & Recycle Bin for Old Records:</strong>
+                        To maintain system performance and data hygiene over time, I introduced:
+                        <ul>
+                            <li>Soft-delete mechanisms ("Recycle Bin") for all critical data (orders, customers, menus, change requests, backups). This prevents accidental data loss and allows for recovery.</li>
+                            <li>Batch clear functions for administrators to move records within a specified date range to the recycle bin.</li>
+                            <li>Automated cleanup jobs (via APScheduler) to permanently delete records from the recycle bin after a configurable period (e.g., 30 days).</li>
+                            <li>This ensures data is managed effectively without cluttering the system or risking permanent loss prematurely.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Intuitive Notification Badges in Navigation:</strong>
+                        To provide administrators and sub-administrators with an at-a-glance overview of pending tasks, I implemented dynamic notification badges in the main navigation bar. These badges display counts for:
+                        <ul>
+                            <li>Pending order approvals.</li>
+                            <li>New order change requests.</li>
+                            <li>New profile change requests.</li>
+                            <li>Unpaid (but approved) orders.</li>
+                            <li>This simple yet effective UI enhancement significantly improves administrative awareness and responsiveness. Customer users also have a tailored set of notifications for their pending and unpaid orders.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tech" class="section">
+            <h2>Technical Deep Dive & Stack</h2>
+            <h3>1. Sophisticated Business Logic & High Configurability</h3>
+            <ul>
+                <li><strong>Complex Discount Strategy Implementation:</strong> A core challenge was accurately implementing and configuring various discount logics, such as the "1 free for every 9 (including/excluding children)" staff discount. This required meticulous judgment and calculation of quantities, prices, and roles, achieved through flexible backend parameter configurations.</li>
+                <li><strong>Dynamic Pricing System:</strong> Menu prices differentiate between current and future prices (with scheduled auto-activation) and are dynamically calculated based on customer type, party composition (adult/child/staff), and holiday service fees, ensuring pricing accuracy and business flexibility.</li>
+                <li><strong>Multi-Role Permissions & Workflow:</strong> The system incorporates a deep understanding of tourism catering operations, featuring multi-level user roles and clear workflows for order approvals and information changes, ensuring accountability and standardized operations.</li>
+            </ul>
+
+            <h3>2. Powerful Data Processing & Interactive Experience</h3>
+            <ul>
+                <li><strong>Intelligent Data Export & Excel Generation:</strong> The custom report export function allows users to select fields and apply multiple filter conditions. The backend uses `XlsxWriter` to dynamically generate complex Excel reports with intelligent column width adjustment and formatted output for specific data types.</li>
+                <li><strong>Secure Temporary File Sharing:</strong> Addressed the need for sharing exported files by designing a token-based encrypted sharing link mechanism with expiration times for secure and controlled data sharing.</li>
+                <li><strong>Asynchronous Tasks & Email Notifications:</strong> For operations like order submissions, status changes, and payment reminders, the system uses Flask-Mail integrated with Python threading (or APScheduler) for asynchronous email notifications, enhancing user experience by avoiding main process blockage.</li>
+            </ul>
+
+            <h3>3. Comprehensive System Management & Maintenance</h3>
+            <ul>
+                <li><strong>Full Recycle Bin Mechanism:</strong> Core data like orders, customers, and menus feature soft-delete functionality with corresponding recycle bin management interfaces for data recovery or permanent deletion.</li>
+                <li><strong>Automated Data Cleanup:</strong> APScheduler tasks automatically clean up recycle bin data and expired share tokens/files beyond a set period (e.g., 30 days), maintaining database cleanliness and system performance.</li>
+                <li><strong>Robust Database Backup & Recovery:</strong> Supports manual and automated database backups (full or data-only). Backup files are storedサーバーサイド, with an interface for recovery, ensuring data disaster recovery capabilities.</li>
+                <li><strong>Multilingual Internationalization (i18n & l10n):</strong> Full multilingual support (currently Chinese and English) via Flask-Babel for UI text, messages, and email content, with user preferences saved automatically.</li>
+            </ul>
+            
+            <h3>Technology Stack</h3>
+            <div class="tech-stack">
+                <ul>
+                    <li><strong>Backend Core:</strong> Python 3.10+, Flask 3.1</li>
+                    <li><strong>ORM & Database:</strong> SQLAlchemy 2.0, Flask-Migrate 4.1, SQLite</li>
+                    <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, jQuery</li>
+                    <li><strong>Email Services:</strong> Flask-Mail 0.10 (SMTP)</li>
+                    <li><strong>Reporting & Data:</strong> XlsxWriter 3.2</li>
+                    <li><strong>Background Tasks:</strong> APScheduler 3.11, Python `threading`</li>
+                    <li><strong>Internationalization:</strong> Flask-Babel 3.1</li>
+                    <li><strong>Security:</strong> `werkzeug.security` (password hashing), `hashlib`, `uuid` (tokens)</li>
+                    <li><strong>Configuration:</strong> Class-based & environment variable configuration</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Restaurant Order Management System &copy; 2024</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                accordionItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 
